@@ -1,13 +1,16 @@
-from pathlib import Path
-import yaml
+from dotenv import load_dotenv
 
-# Папка, в которой находится main.py
-project_dir = Path(__file__).resolve().parent
+from edu_assistant.assistant import create_response
 
-# config.yml рядом с main.py
-config_path = project_dir / "config.yml"
+load_dotenv()
 
-config_str = config_path.read_text(encoding="utf-8")
-config = yaml.safe_load(config_str)
+INPUT_PROMPT = "Кто победил, печенеги или половцы?"
 
-print(config)
+response = create_response(
+    llm_key="ollama",
+    role="history_tutor",
+    template="tutor_quick_answer",
+    prompt=INPUT_PROMPT,
+)
+
+print(response)

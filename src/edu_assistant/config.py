@@ -37,7 +37,9 @@ class Config(BaseModel):
         return cls.model_validate(config_dict)
 
     def render_system_instructions(self, role: RoleType, template: TemplateType) -> str:
-        instruction = self.roles[role].instruction.strip()
+        role_instruction = self.roles[role].instruction.strip()
         system_template = self.system_templates[template]
-        return system_template.format(role_instruction=instruction)
-        # TODO: достать шаблон системной инструкции system_template и подставить в него инструкцию. Вернуть результат
+
+        return system_template.format(
+            role_instruction=role_instruction,
+        )
