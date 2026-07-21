@@ -5,10 +5,11 @@ from edu_assistant.assistant import create_response
 load_dotenv()
 
 INPUT_PROMPT = input()
+
 response = create_response(
-    llm_key="ollama",
+    llm_key="mistral",
     role="history_tutor",
-    template="tutor_quick_answer",
+    template="tutor_full_answer",
     prompt=INPUT_PROMPT,
 )
 

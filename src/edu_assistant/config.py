@@ -15,6 +15,7 @@ class AppConfig(BaseModel):
 class LLMConfig(BaseModel):
     model: str
     base_url: str | None = None
+    api_key_env: str | None = None
     timeout: float = 60.0
     max_output_tokens: int
 

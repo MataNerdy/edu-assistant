@@ -28,11 +28,8 @@
 Для запуска сервера используйте команду:
 
 ```bash
-uv run fastapi dev
+uv run main.py
 ```
-
-Сервер будет доступен по адресу: http://127.0.0.1:11434/v1
-
 
 ### Тестовый скрипт
 
@@ -40,17 +37,6 @@ uv run fastapi dev
 
 ```bash
 uv run main.py
-```
-
-## Использование (Пример запроса)
-
-Вы можете отправить POST-запрос на эндпоинт `/ask`:
-
-```bash
-curl -X 'POST' \
-  'http://127.0.0.1:8000/ask' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'role=math_tutor&template=tutor_quick_answer&question=Что такое число Пи?'
 ```
 
 ### Параметры:

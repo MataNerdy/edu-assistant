@@ -1,12 +1,15 @@
 llms:
-  api:
-    model: "gpt-5.4-nano"
-    base_url: "https://llm.inzhenerka-cloud.com/"
+  mistral:
+    model: "mistral-small-latest"
+    base_url: "https://api.mistral.ai/v1"
+    api_key_env: "MISTRAL_API_KEY"
     timeout: 60
     max_output_tokens: 512
+
   ollama:
     model: "gemma3:1b"
-    base_url: http://127.0.0.1:11434/v1
+    base_url: "http://127.0.0.1:11434/v1"
+    api_key_env: null
     timeout: 60
     max_output_tokens: 512
 
