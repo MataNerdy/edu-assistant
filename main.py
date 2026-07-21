@@ -4,8 +4,7 @@ from edu_assistant.assistant import create_response
 
 load_dotenv()
 
-INPUT_PROMPT = "Кто победил, печенеги или половцы?"
-
+INPUT_PROMPT = input()
 response = create_response(
     llm_key="ollama",
     role="history_tutor",
